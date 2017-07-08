@@ -1,16 +1,4 @@
 local itermHotkeyMappings = {
-  -- Use control + dash to split panes horizontally
-  {
-    from = {{'ctrl'}, '-'},
-    to   = {{'cmd', 'shift'}, 'd'}
-  },
-
-  -- Use control + pipe to split panes vertically
-  {
-    from = {{'ctrl', 'shift'}, '\\'},
-    to   = {{'cmd'}, 'd'}
-  },
-
   -- Use control + h/j/k/l to move left/down/up/right by one pane
   {
     from = {{'ctrl'}, 'h'},
