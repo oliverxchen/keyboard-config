@@ -83,7 +83,7 @@ In this setup, we'll use the **right option** key as our **hyper** key. With a n
 
 - **hyper** + **b** to open Google Chrome ("B" for "Browser")
 - **hyper** + **f** to open Finder ("F" for "Finder")
-- **hyper** + **g** to open [Mailplane](http://mailplaneapp.com/) ("G" for "Gmail")
+- **hyper** + **s** to open [Slack](https://www.slack.com/) ("S" for "Slack")
 - **hyper** + **t** to open [iTerm2](https://www.iterm2.com/) ("T" for "Terminal")
 - **hyper** + **w** to open [WhatsApp](https://www.whatsapp.com/) ("W" for "WhatsApp")
 
@@ -91,10 +91,12 @@ Edit [`hammerspoon/hyper.lua`](hammerspoon/hyper.lua) to configure shortcuts to 
 
 ### Miscellaneous goodness
 
-- Use **control** + **h**/**j**/**k**/**l** to move left/down/up/right by one pane in iTerm2
-- Use **control** + **u** to delete to the start of the line
-- Use **control** + **;** to delete to the end of the line
-- Use **option** + **h**/**l** to delete the previous/next word
+- Use **control** + **h**/**j**/**k**/**l** to do a basic move left/down/up/right
+- Use **alt** + **h**/**j**/**k**/**l** to move left/down/up/right by one pane in iTerm2
+- Use **command** + **h**/**l** to move left/right by one word
+- Use **command** + **j**/**k** to page down/up
+- Use **control** + **u** to delete to the start of the line in iTerm2
+- Use **control** + **;** to delete to the end of the line in iTerm2
 
 ## Dependencies
 
