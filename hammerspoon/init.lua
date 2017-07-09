@@ -32,7 +32,8 @@ enableHotkeyForWindowsMatchingFilter = function(windowFilter, hotkey)
 end
 
 require('keyboard.control-escape')
-require('keyboard.delete-words')
+require('keyboard.delete-line')
+require('keyboard.interrupt')
 require('keyboard.hyper')
 -- require('keyboard.markdown')
 require('keyboard.microphone')

@@ -12,11 +12,30 @@ local function remap(mods, key, pressFn)
   hs.hotkey.bind(mods, key, pressFn, nil, pressFn)
 end
 
--- basic movement
-remap({'ctrl'}, 'h', pressFn('left'))
+local isInBrowser = function()
+  app = hs.application.frontmostApplication():name()
+  return app == 'Google Chrome' or app == 'FireFox'
+end
+
+-- backward/forward in browser, left/right elsewhere
+hs.hotkey.bind({'ctrl'}, 'h', function()
+  if isInBrowser() then
+    keyUpDown({'cmd'}, 'left')
+  else
+    keyUpDown({}, 'left')
+  end
+end)
+hs.hotkey.bind({'ctrl'}, 'l', function()
+  if isInBrowser() then
+    keyUpDown({'cmd'}, 'right')
+  else
+    keyUpDown({}, 'right')
+  end
+end)
+
+-- up/down
 remap({'ctrl'}, 'j', pressFn('down'))
 remap({'ctrl'}, 'k', pressFn('up'))
-remap({'ctrl'}, 'l', pressFn('right'))
 
 -- next/previous word
 remap({'cmd'}, 'h', pressFn({'alt'}, 'left'))
