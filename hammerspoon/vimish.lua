@@ -44,3 +44,21 @@ remap({'cmd'}, 'l', pressFn({'alt'}, 'right'))
 -- page down/up
 remap({'cmd'}, 'j', pressFn('pagedown'))
 remap({'cmd'}, 'k', pressFn('pageup'))
+
+-- go to address bar ('G' for go)
+hotkeyForCommandL = hs.fnutils.find(hs.hotkey.getHotkeys(), function(hotkey)
+  return hotkey.idx == '⌘L'
+end)
+
+hs.hotkey.bind({'ctrl'}, 'g', function()
+  if isInBrowser() then
+    hotkeyForCommandL:disable()
+    keyUpDown({'cmd'}, 'l')
+
+    -- Allow some time for the command+l keystroke to fire asynchronously before
+    -- we re-enable our custom command+l hotkey.
+    hs.timer.doAfter(0.2, function()
+      hotkeyForCommandL:enable()
+    end)
+  end
+end)
