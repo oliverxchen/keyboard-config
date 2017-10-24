@@ -41,10 +41,6 @@ remap({'ctrl'}, 'k', pressFn('up'))
 remap({'cmd'}, 'h', pressFn({'alt'}, 'left'))
 remap({'cmd'}, 'l', pressFn({'alt'}, 'right'))
 
--- page down/up
-remap({'cmd'}, 'j', pressFn('pagedown'))
-remap({'cmd'}, 'k', pressFn('pageup'))
-
 -- go to address bar ('G' for go)
 hotkeyForCommandL = hs.fnutils.find(hs.hotkey.getHotkeys(), function(hotkey)
   return hotkey.idx == '⌘L'
