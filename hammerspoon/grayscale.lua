@@ -1,4 +1,4 @@
-hs.hotkey.bind({"ctrl"}, "D", function()
+hs.hotkey.bind({"ctrl"}, "B", function()
   forceToGray = hs.screen.getForceToGray()
   if(forceToGray)
   then
