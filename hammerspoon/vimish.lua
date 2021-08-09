@@ -17,29 +17,21 @@ local isInBrowser = function()
   return app == 'Google Chrome' or app == 'FireFox'
 end
 
--- backward/forward in browser, left/right elsewhere
-hs.hotkey.bind({'ctrl'}, 'h', function()
-  if isInBrowser() then
-    keyUpDown({'cmd'}, 'left')
-  else
-    keyUpDown({}, 'left')
-  end
-end)
-hs.hotkey.bind({'ctrl'}, 'l', function()
-  if isInBrowser() then
-    keyUpDown({'cmd'}, 'right')
-  else
-    keyUpDown({}, 'right')
-  end
-end)
-
--- up/down
+-- up/down/left/right
+remap({'ctrl'}, 'h', pressFn('left'))
 remap({'ctrl'}, 'j', pressFn('down'))
 remap({'ctrl'}, 'k', pressFn('up'))
+remap({'ctrl'}, 'l', pressFn('right'))
 
 -- next/previous word
 remap({'cmd'}, 'h', pressFn({'alt'}, 'left'))
 remap({'cmd'}, 'l', pressFn({'alt'}, 'right'))
+
+-- select arrow keys
+remap({'cmd', 'shift'}, 'h', pressFn({'shift'}, 'left'))
+remap({'cmd', 'shift'}, 'j', pressFn({'shift'}, 'down'))
+remap({'cmd', 'shift'}, 'k', pressFn({'shift'}, 'up'))
+remap({'cmd', 'shift'}, 'l', pressFn({'shift'}, 'right'))
 
 -- go to address bar ('G' for go)
 hotkeyForCommandL = hs.fnutils.find(hs.hotkey.getHotkeys(), function(hotkey)
