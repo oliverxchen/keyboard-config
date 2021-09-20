@@ -14,7 +14,7 @@ end
 
 local isInBrowser = function()
   app = hs.application.frontmostApplication():name()
-  return app == 'Google Chrome' or app == 'FireFox'
+  return app == 'Google Chrome' or app == 'FireFox' or app == 'Brave'
 end
 
 -- up/down/left/right
