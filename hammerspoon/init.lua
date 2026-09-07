@@ -41,6 +41,5 @@ require('keyboard.panes')
 -- require('keyboard.super')
 require('keyboard.windows')
 require('keyboard.vimish')
-require('keyboard.grayscale')
 
 hs.notify.new({title='Hammerspoon', informativeText='Ready to rock 🤘'}):send()
